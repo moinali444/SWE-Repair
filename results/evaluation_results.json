@@ -1,0 +1,39 @@
+{
+    "project": "SWE-Repair",
+    "total_examples": 3,
+    "successful_repairs": 3,
+    "failed_repairs": 0,
+    "repair_success_rate_percent": 100.0,
+    "results": [
+        {
+            "bug_id": "BUG001",
+            "description": "Assignment operator used instead of comparison",
+            "detected_repairs": [
+                "Assignment used instead of comparison"
+            ],
+            "syntax_valid": true,
+            "test_passed": true,
+            "execution_time_seconds": 5.6e-05
+        },
+        {
+            "bug_id": "BUG002",
+            "description": "List index out of range",
+            "detected_repairs": [
+                "Incorrect final list index"
+            ],
+            "syntax_valid": true,
+            "test_passed": true,
+            "execution_time_seconds": 4e-05
+        },
+        {
+            "bug_id": "BUG003",
+            "description": "Incorrect arithmetic operator",
+            "detected_repairs": [
+                "Incorrect addition operator"
+            ],
+            "syntax_valid": true,
+            "test_passed": true,
+            "execution_time_seconds": 3e-05
+        }
+    ]
+}
