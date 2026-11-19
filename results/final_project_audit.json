@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-11-19T18:40:35.707141+00:00",
+  "project": "SWE-Repair",
+  "dataset": {
+    "train_records": 118,
+    "test_records": 35,
+    "total_records": 153,
+    "train_repositories": 21,
+    "test_repositories": 6,
+    "repository_overlap_count": 0,
+    "repository_overlap": [],
+    "repository_disjoint_split": true,
+    "train_file_exists": true,
+    "test_file_exists": true
+  },
+  "patch_validation": {
+    "train_full.jsonl": {
+      "total": 118,
+      "basic_diff_structure_valid": 118,
+      "invalid": 0
+    },
+    "test_full.jsonl": {
+      "total": 35,
+      "basic_diff_structure_valid": 35,
+      "invalid": 0
+    }
+  },
+  "experiments": [
+    {
+      "file": "repair_eval_facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7.json",
+      "task_id": "facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7",
+      "status": "passed",
+      "candidate_type": "unspecified",
+      "tests_passed": null,
+      "tests_failed": null,
+      "execution_time_seconds": 1.64,
+      "model_generated": false,
+      "pass_at_1_model_result": null,
+      "evaluation_interpretation": ""
+    }
+  ],
+  "benchmark_validation": {
+    "experiment": "SWE-smith Docker benchmark validation",
+    "instance_id": "facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7",
+    "repository": "swesmith/facelessuser__soupsieve.a8080d97",
+    "docker_image": "swebench/swesmith.x86_64.facelessuser_1776_soupsieve.a8080d97",
+    "required_tests": [
+      "tests/test_versions.py::TestVersion::test_version_output",
+      "tests/test_versions.py::TestVersion::test_version_parsing"
+    ],
+    "patch_format_valid": true,
+    "patch_application": "success",
+    "clean_baseline": {
+      "passed": 2,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "after_dataset_bug_patch": {
+      "passed": 0,
+      "failed": 2,
+      "status": "FAIL",
+      "failure_summary": [
+        "Version._get_canonical() returned .post0 instead of 1.0",
+        "parse_version() rejected the generated .post0 version"
+      ]
+    },
+    "interpretation": "The dataset patch reproduces failures in the required tests. The clean baseline passes.",
+    "model_inference_performed": false,
+    "lora_training_performed": false,
+    "ai_repair_success_claimed": false
+  },
+  "required_files": {
+    "main.py": true,
+    "README.md": true,
+    "evaluate_repair.py": true,
+    "generate_repair.py": true,
+    "src/repair_agent.py": true,
+    "src/repair_pipeline.py": true,
+    "src/qwen_adapter.py": true,
+    "src/patch_utils.py": true,
+    "data/train_full.jsonl": true,
+    "data/test_full.jsonl": true,
+    "results/benchmark_validation.json": true
+  },
+  "model_inference_completed": false,
+  "lora_training_completed": false,
+  "ai_generated_benchmark_score_available": false,
+  "notes": [
+    "SWE-smith output patches represent injected bug changes.",
+    "The inverse patch experiment is an oracle/reference validation.",
+    "The oracle experiment is not an AI-generated repair.",
+    "Qwen adapter code has been created and unit-tested.",
+    "Actual Qwen inference and LoRA training remain pending.",
+    "Patch structure validation does not prove patch correctness."
+  ]
+}

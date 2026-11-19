@@ -1,0 +1,247 @@
+[
+  {
+    "instance_id": "facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.func_pm_remove_assign__70jyz2gr",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_remove_cond__t31halg2",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.pr_9478",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "gweis__isodate.17cb25eb.combine_module__cenvquqa",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "facelessuser__soupsieve.a8080d97.func_basic__4x3aw12q",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_ctrl_shuffle__bu1krfc8",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_remove_assign__senhzr98",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_remove_cond__7x16whc6",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "john-kurkowski__tldextract.3d1bf184.pr_306",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_remove_cond__o6yj6b8d",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.lm_rewrite__r1p4fhko",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.pr_7734",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.pr_11060",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "john-kurkowski__tldextract.3d1bf184.combine_file__n6zgcqxa",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.pr_7749",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "encode__starlette.db5063c2.func_basic__q65g5nei",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.pr_2238",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "facelessuser__soupsieve.a8080d97.func_basic__i6e02i99",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "encode__starlette.db5063c2.pr_2193",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.lm_rewrite__jdp2z8f2",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "encode__starlette.db5063c2.lm_rewrite__14auzts8",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_class_rm_funcs__h6o49nw8",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "encode__starlette.db5063c2.lm_rewrite__u52tll1j",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "gweis__isodate.17cb25eb.combine_module__twxleaao",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "encode__starlette.db5063c2.func_pm_ctrl_shuffle__76psliy8",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "Project-MONAI__MONAI.a09c1f08.func_pm_class_rm_base__l9cm8ewv",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "facelessuser__soupsieve.a8080d97.lm_rewrite__ns2xlszz",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "gweis__isodate.17cb25eb.combine_file__0ughdbtx",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "facelessuser__soupsieve.a8080d97.combine_file__6dl3cpo3",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "gweis__isodate.17cb25eb.combine_module__muj4w50i",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.lm_rewrite__r0wsmmp5",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.func_pm_remove_assign__ffqhn74u",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.combine_module__h82xyl0p",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  },
+  {
+    "instance_id": "pydantic__pydantic.acb0f10f.combine_file__s8ozz2jc",
+    "valid_patch_format": true,
+    "repository": "Not yet cloned",
+    "patch_applicable": null,
+    "status": "format_valid"
+  }
+]

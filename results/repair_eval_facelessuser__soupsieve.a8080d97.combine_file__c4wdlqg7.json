@@ -1,0 +1,16 @@
+{
+  "task_id": "facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7",
+  "repository": "swesmith/facelessuser__soupsieve.a8080d97",
+  "docker_image": "swebench/swesmith.x86_64.facelessuser_1776_soupsieve.a8080d97",
+  "required_tests": [
+    "tests/test_versions.py::TestVersion::test_version_output",
+    "tests/test_versions.py::TestVersion::test_version_parsing"
+  ],
+  "candidate_patch": "C:\\Users\\moin2\\OneDrive\\Desktop\\SWE-Repair\\data\\pipeline_candidate.patch",
+  "status": "passed",
+  "docker_exit_code": 0,
+  "execution_time_seconds": 1.64,
+  "evaluated_at_utc": "2026-11-19T18:37:05.794255+00:00",
+  "model_generated": false,
+  "output": "BUG_PATCH_CHECK\nBUG_PATCH_APPLIED\nREPAIR_PATCH_CHECK\nREPAIR_PATCH_APPLIED\nTESTS_STARTED\n============================= test session starts ==============================\nplatform linux -- Python 3.10.16, pytest-8.3.3, pluggy-1.5.0 -- /opt/miniconda3/envs/testbed/bin/python\ncachedir: .pytest_cache\nrootdir: /testbed\nconfigfile: pyproject.toml\nplugins: cov-6.0.0\ncollecting ... collected 2 items\n\ntests/test_versions.py::TestVersion::test_version_output PASSED          [ 50%]\ntests/test_versions.py::TestVersion::test_version_parsing PASSED         [100%]\n\n============================== 2 passed in 0.09s ===============================\nPYTEST_EXIT_CODE=0\n\nWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\n"
+}

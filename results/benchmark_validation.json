@@ -1,0 +1,30 @@
+{
+    "experiment": "SWE-smith Docker benchmark validation",
+    "instance_id": "facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7",
+    "repository": "swesmith/facelessuser__soupsieve.a8080d97",
+    "docker_image": "swebench/swesmith.x86_64.facelessuser_1776_soupsieve.a8080d97",
+    "required_tests": [
+        "tests/test_versions.py::TestVersion::test_version_output",
+        "tests/test_versions.py::TestVersion::test_version_parsing"
+    ],
+    "patch_format_valid": true,
+    "patch_application": "success",
+    "clean_baseline": {
+        "passed": 2,
+        "failed": 0,
+        "status": "PASS"
+    },
+    "after_dataset_bug_patch": {
+        "passed": 0,
+        "failed": 2,
+        "status": "FAIL",
+        "failure_summary": [
+            "Version._get_canonical() returned .post0 instead of 1.0",
+            "parse_version() rejected the generated .post0 version"
+        ]
+    },
+    "interpretation": "The dataset patch reproduces failures in the required tests. The clean baseline passes.",
+    "model_inference_performed": false,
+    "lora_training_performed": false,
+    "ai_repair_success_claimed": false
+}
