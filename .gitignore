@@ -3,3 +3,32 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .env
+# Python temporary files
+__pycache__/
+*.py[cod]
+.coverage
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Local environment secrets
+.env
+.env.*
+
+# Docker repository working copies
+repository_source/
+repository_patched/
+
+# Temporary experiment files
+*.tmp
+*.log
+
+# Model weights and checkpoints
+*.safetensors
+*.gguf
+*.ckpt
+checkpoints/
+models/
