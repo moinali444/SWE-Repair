@@ -1,0 +1,30 @@
+{
+  "task_id": "facelessuser__soupsieve.a8080d97.combine_file__c4wdlqg7",
+  "model": "qwen2.5-coder:3b",
+  "generation_method": "Ollama local inference",
+  "generation_time_seconds": 57.288,
+  "generated_at_utc": "2026-11-20T03:47:03.607031+00:00",
+  "patch_file": "C:\\Users\\moin2\\OneDrive\\Desktop\\SWE-Repair\\results\\qwen_ollama_candidate.patch",
+  "git_apply_check": false,
+  "validation_message": "error: corrupt patch at C:/Users/moin2/OneDrive/Desktop/SWE-Repair/results/qwen_ollama_candidate.patch:13",
+  "docker_test_status": "not_evaluated",
+  "inference_attempted": true,
+  "valid_ai_patch_generated": false,
+  "attempts": [
+    {
+      "attempt": 1,
+      "method": "Unified diff generation",
+      "model": "qwen2.5-coder:3b",
+      "generation_time_seconds": 57.288,
+      "result": "Invalid unified diff",
+      "git_apply_check": false
+    },
+    {
+      "attempt": 2,
+      "method": "Complete source generation",
+      "model": "qwen2.5-coder:3b",
+      "result": "Generated source contained a syntax error at line 196",
+      "syntax_valid": false
+    }
+  ]
+}

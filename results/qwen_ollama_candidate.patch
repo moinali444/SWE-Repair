@@ -1,0 +1,195 @@
+diff --git a/soupsieve/__meta__.py b/soupsieve/__meta__.py
+index 1234567..89abcdef 100644
+--- a/soupsieve/__meta__.py
++++ b/soupsieve/__meta__.py
+@@ -1,7 +1,7 @@
+ """Meta related things."""
+ from __future__ import annotations
+-from collections import namedtuple
++from collections import namedtuple, OrderedDict
+ import re
+
+ RE_VER = re.compile(
+@@ -10,7 +10,7 @@ REL_MAP = {
+     ".dev": "",
+     ".dev-alpha": "a",
+     ".dev-beta": "b",
+-    ".dev-candidate": "rc",
++    ".dev-candidate": "rc",
+     "alpha": "a",
+     "beta": "b",
+     "candidate": "rc",
+@@ -20,7 +20,7 @@ DEV_STATUS = {
+     ".dev": "2 - Pre-Alpha",
+     ".dev-alpha": "2 - Pre-Alpha",
+     ".dev-beta": "2 - Pre-Alpha",
+-    ".dev-candidate": "2 - Pre-Alpha",
++    ".dev-candidate": "2 - Pre-Alpha",
+     "alpha": "3 - Alpha",
+     "beta": "4 - Beta",
+     "candidate": "4 - Beta",
+@@ -30,7 +30,7 @@ PRE_REL_MAP = {"a": 'alpha', "b": 'beta', "rc": 'candidate'}
+
+ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+@@ -40,7 +40,7 @@ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+         """Validate version info."""
+
+         # Ensure all parts are positive integers.
+-        for value in (major, minor, micro, pre, post):
++        for value in (major, minor, micro, pre, post, dev):
+             if not (isinstance(value, int) and value >= 0):
+                 raise ValueError("All version parts except 'release' should be integers.")
+
+@@ -50,7 +50,7 @@ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+         if release not in REL_MAP:
+             raise ValueError(f"'{release}' is not a valid release type.")
+
+-        # Ensure valid pre-release (we do not allow implicit pre-releases).
++        # Ensure valid pre-release (we do not allow implicit pre-releases).
+         if ".dev-candidate" < release < "final":
+             if pre == 0:
+                 raise ValueError("Implicit pre-releases not allowed.")
+@@ -60,7 +60,7 @@ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+         elif release < "alpha":
+             if release > ".dev" and pre == 0:
+                 raise ValueError("Implicit pre-release not allowed.")
+-            elif post:
++            elif post > 0:
+                 raise ValueError("Post-releases are not allowed with pre-releases.")
+
+         # Ensure a valid normal release
+@@ -70,7 +70,7 @@ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+         else:
+             if pre:
+                 raise ValueError("Version is not a pre-release.")
+-            elif dev:
++            elif dev > 0:
+                 raise ValueError("Version is not a development release.")
+
+         return super().__new__(cls, major, minor, micro, release, pre, post, dev)
+
+@@ -80,7 +80,7 @@ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+     """Get the canonical output string."""
+
+     if self.micro == 0:
+         ver = f"{self.minor}.{self.major}"
+-    else:
++    else:
+         ver = f"{self.major}.{self.micro}.{self.minor}"
+     if self._is_pre():
+         ver += f'{REL_MAP[self.release]}{self.pre + 1}'
+@@ -90,7 +90,7 @@ class Version(namedtuple("Version", ["major", "minor", "micro", "release", "pre", "post", "dev"])):
+     if self._is_post():
+         ver = f".post{self.post}"
+     if self._is_dev():
+-        ver += f".dev{self.dev}"
++        ver += f".dev{self.dev + 1}"
+
+     return ver
+
+
+@@ -100,7 +100,7 @@ def parse_version(ver: str) -> Version:
+     """Parse version into a comparable Version tuple."""
+
+     m = RE_VER.match(ver)
+
+@@ -110,7 +110,7 @@ def parse_version(ver: str) -> Version:
+         raise ValueError(f"'{ver}' is not a valid version")
+
+     # Handle major, minor, micro
+-    major = int(m.group('major'))
++    major = int(m.group('major')) if m.group('major') else 0
+     minor = int(m.group('minor')) if m.group('minor') else 0
+     micro = int(m.group('micro')) if m.group('micro') else 0
+
+@@ -120,7 +120,7 @@ def parse_version(ver: str) -> Version:
+     # Handle pre releases
+     if m.group('type'):
+         release = PRE_REL_MAP[m.group('type')]
+-        pre = int(m.group('pre')) if m.group('pre') else 0
++        pre = int(m.group('pre')) if m.group('pre') else 1
+
+     else:
+         release = "final"
+@@ -130,7 +130,7 @@ def parse_version(ver: str) -> Version:
+     dev = m.group('dev') if m.group('dev') else 0
+     if m.group('dev'):
+         dev = int(m.group('dev'))
+-        release = release + '.dev' if dev else release
++        release = release + '.dev' if dev else release
+
+     else:
+         dev = 0
+
+@@ -140,7 +140,7 @@ def parse_version(ver: str) -> Version:
+     post = int(m.group('post')) if m.group('post') else 1
+
+     return Version(major, minor, micro, release, dev, pre, post)
+
+
+@@ -150,7 +150,7 @@ __version_info__ = Version(2, 6, 0, "final")
+ __version__ = __version_info__._get_canonical()
+
+
+-RELATED TEST FILE:
++RELATED TEST FILE:
+@@ -160,7 +160,7 @@ import unittest
+ from soupsieve.__meta__ import Version, parse_version
+
+
+ class TestVersion(unittest.TestCase):
+@@ -170,7 +170,7 @@ class TestVersion(unittest.TestCase):
+         """Test that versions generate proper strings."""
+
+         assert Version(1, 0, 0, "final")._get_canonical() == "1.0"
+         assert Version(1, 2, 0, "final")._get_canonical() == "1.2"
+         assert Version(1, 2, 3, "final")._get_canonical() == "1.2.3"
+         assert Version(1, 2, 0, "alpha", pre=4)._get_canonical() == "1.2a4"
+         assert Version(1, 2, 0, "beta", pre=4)._get_canonical() == "1.2b4"
+         assert Version(1, 2, 0, "candidate", pre=4)._get_canonical() == "1.2rc4"
+@@ -180,7 +180,7 @@ class TestVersion(unittest.TestCase):
+         assert Version(1, 2, 3, ".dev-beta", pre=2).get_canonical() == "1.2.3b2.dev0"
+         assert Version(1, 2, 3, ".dev").get_canonical() == "1.2.3.dev0"
+         assert Version(1, 2, 3, ".dev", dev=1).get_canonical() == "1.2.3.dev1"
+
+@@ -190,7 +190,7 @@ class TestVersion(unittest.TestCase):
+         """Test that versions compare proper."""
+
+         assert Version(1, 0, 0, "final") < Version(1, 2, 0, "final")
+         assert Version(1, 2, 0, "alpha", pre=4) < Version(1, 2, 0, "final")
+         assert Version(1, 2, 0, "final") < Version(1, 2, 0, "final", post=1)
+         assert Version(1, 2, 3, ".dev-beta", pre=2) < Version(1, 2, 3, "beta", pre=2)
+         assert Version(1, 2, 3, ".dev").get_canonical() == "1.2.3.dev0"
+         assert Version(1, 2, 3, ".dev", dev=1).get_canonical() == "1.2.3.dev1"
+
+@@ -200,7 +200,7 @@ class TestVersion(unittest.TestCase):
+         """Test version parsing."""
+
+         assert parse_version(
+             Version(1, 0, 0, "final")._get_canonical()
+         ) == Version(1, 0, 0, "final")
+         assert parse_version(
+             Version(1, 2, 0, "final")._get_canonical()
+         ) == Version(1, 2, 0, "final")
+         assert parse_version(
+             Version(1, 2, 3, "final")._get_canonical()
+         ) == Version(1, 2, 3, "final")
+         assert parse_version(
+             Version(1, 2, 0, "alpha", pre=4)._get_canonical()
+         ) == Version(1, 2, 0, "alpha", pre=4)
+         assert parse_version(
+             Version(1, 2, 0, "beta", pre=4)._get_canonical()
+         ) == Version(1, 2, 0, "beta", pre=4)
+         assert parse_version(
+             Version(1, 2, 0, "candidate", pre=4)._get_canonical()
+         ) == Version(1, 2, 0, "candidate", pre=4)
+         assert parse_version(
+             Version(1, 2, 0, "final", post=1)._get_canonical()
+         ) == Version(1, 2, 0, "final", post=1)
+         assert parse_version(
+             Version(1, 2, 3, ".dev-alpha", pre=1)._get_canonical()
+         ) == Version(1, 2, 3, ".dev-alpha", pre=1)
+         assert parse_version(
+             Version(1, 2, 3, ".dev").get_canonical()
+         ) == Version(1, 2, 3, ".dev")
+         assert parse_version(

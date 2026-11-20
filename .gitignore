@@ -32,3 +32,7 @@ repository_patched/
 *.ckpt
 checkpoints/
 models/
+
+repository_soupsieve/
+repository_soupsieve_buggy/
+repository_soupsieve_candidate/
